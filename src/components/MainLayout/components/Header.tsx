@@ -33,7 +33,7 @@ export default function Header() {
             underline="none"
             to="/"
           >
-            My Store!
+            This is Aliaksei's Store! (THIS IS A MINOR CHANGE)
           </Link>
         </Typography>
 
