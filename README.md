@@ -40,7 +40,7 @@ Runs linting and formatting for all files in `src` folder.
 
 
 
-## Manual deployment links (due to lack of time, the Automated deployment part was not done...)
+## Manual deployment links
 
 ### Cloudfront:
 
