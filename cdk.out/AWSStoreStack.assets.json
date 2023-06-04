@@ -1,0 +1,62 @@
+{
+  "version": "32.0.0",
+  "files": {
+    "0e38c73676c042efb04d698981ab7a9706991a146e59250a537916db0e9bde39": {
+      "source": {
+        "path": "asset.0e38c73676c042efb04d698981ab7a9706991a146e59250a537916db0e9bde39.zip",
+        "packaging": "file"
+      },
+      "destinations": {
+        "current_account-eu-central-1": {
+          "bucketName": "awscdrsschoolautomated",
+          "objectKey": "0e38c73676c042efb04d698981ab7a9706991a146e59250a537916db0e9bde39.zip",
+          "region": "eu-central-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-eu-central-1"
+        }
+      }
+    },
+    "9eb41a5505d37607ac419321497a4f8c21cf0ee1f9b4a6b29aa04301aea5c7fd": {
+      "source": {
+        "path": "asset.9eb41a5505d37607ac419321497a4f8c21cf0ee1f9b4a6b29aa04301aea5c7fd",
+        "packaging": "zip"
+      },
+      "destinations": {
+        "current_account-eu-central-1": {
+          "bucketName": "awscdrsschoolautomated",
+          "objectKey": "9eb41a5505d37607ac419321497a4f8c21cf0ee1f9b4a6b29aa04301aea5c7fd.zip",
+          "region": "eu-central-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-eu-central-1"
+        }
+      }
+    },
+    "5c19be8ac7516b3ef0b078e64cb9704b96ea000db048bb6afa395c2e37894ca7": {
+      "source": {
+        "path": "asset.5c19be8ac7516b3ef0b078e64cb9704b96ea000db048bb6afa395c2e37894ca7",
+        "packaging": "zip"
+      },
+      "destinations": {
+        "current_account-eu-central-1": {
+          "bucketName": "awscdrsschoolautomated",
+          "objectKey": "5c19be8ac7516b3ef0b078e64cb9704b96ea000db048bb6afa395c2e37894ca7.zip",
+          "region": "eu-central-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-eu-central-1"
+        }
+      }
+    },
+    "13d8a9f19f7dc029d3393423607fd5317669e1c4731a45196a2af21998aca880": {
+      "source": {
+        "path": "AWSStoreStack.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "current_account-eu-central-1": {
+          "bucketName": "awscdrsschoolautomated",
+          "objectKey": "13d8a9f19f7dc029d3393423607fd5317669e1c4731a45196a2af21998aca880.json",
+          "region": "eu-central-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-eu-central-1"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}
