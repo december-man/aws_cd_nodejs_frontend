@@ -40,19 +40,16 @@ Runs linting and formatting for all files in `src` folder.
 
 
 
-## Manual deployment links
+##  Deployment links
 
-### Cloudfront:
+### Automated Deployment Cloudfront URL:
 
-https://d2qyic7cxelodb.cloudfront.net/
+https://d1p3i1le0resnt.cloudfront.net
 
 ### Bucket Website Endpoint (Bucket Hosting):
 
 http://awscdrsschool.s3-website.eu-central-1.amazonaws.com/
 
-### Index.html Object URL:
-
-https://awscdrsschool.s3.eu-central-1.amazonaws.com/index.html
 
 
 
