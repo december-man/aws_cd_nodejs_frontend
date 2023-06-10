@@ -36,3 +36,20 @@ Runs tests in console, in browser or with coverage.
 ### `lint`, `prettier`
 
 Runs linting and formatting for all files in `src` folder.
+
+
+
+
+##  Deployment links
+
+### Automated Deployment Cloudfront URL:
+
+https://d1p3i1le0resnt.cloudfront.net
+
+### Bucket Website Endpoint (Bucket Hosting):
+
+http://awscdrsschool.s3-website.eu-central-1.amazonaws.com/
+
+
+
+
