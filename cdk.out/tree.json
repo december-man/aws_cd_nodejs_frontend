@@ -4,24 +4,24 @@
     "id": "App",
     "path": "",
     "children": {
-      "AWSStoreStack": {
-        "id": "AWSStoreStack",
-        "path": "AWSStoreStack",
+      "AWSStoreStackv3": {
+        "id": "AWSStoreStackv3",
+        "path": "AWSStoreStackv3",
         "children": {
           "AWSStoreBucket": {
             "id": "AWSStoreBucket",
-            "path": "AWSStoreStack/AWSStoreBucket",
+            "path": "AWSStoreStackv3/AWSStoreBucket",
             "children": {
               "Resource": {
                 "id": "Resource",
-                "path": "AWSStoreStack/AWSStoreBucket/Resource",
+                "path": "AWSStoreStackv3/AWSStoreBucket/Resource",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::S3::Bucket",
                   "aws:cdk:cloudformation:props": {
-                    "bucketName": "awscdrsschoolauto",
+                    "bucketName": "awscdrsschoolt2v3",
                     "tags": [
                       {
-                        "key": "aws-cdk:cr-owned:42d319b3",
+                        "key": "aws-cdk:cr-owned:f3543bf8",
                         "value": "true"
                       }
                     ]
@@ -34,11 +34,11 @@
               },
               "Policy": {
                 "id": "Policy",
-                "path": "AWSStoreStack/AWSStoreBucket/Policy",
+                "path": "AWSStoreStackv3/AWSStoreBucket/Policy",
                 "children": {
                   "Resource": {
                     "id": "Resource",
-                    "path": "AWSStoreStack/AWSStoreBucket/Policy/Resource",
+                    "path": "AWSStoreStackv3/AWSStoreBucket/Policy/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::S3::BucketPolicy",
                       "aws:cdk:cloudformation:props": {
@@ -135,11 +135,11 @@
           },
           "AWSStoreOAI": {
             "id": "AWSStoreOAI",
-            "path": "AWSStoreStack/AWSStoreOAI",
+            "path": "AWSStoreStackv3/AWSStoreOAI",
             "children": {
               "Resource": {
                 "id": "Resource",
-                "path": "AWSStoreStack/AWSStoreOAI/Resource",
+                "path": "AWSStoreStackv3/AWSStoreOAI/Resource",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::CloudFront::CloudFrontOriginAccessIdentity",
                   "aws:cdk:cloudformation:props": {
@@ -161,13 +161,13 @@
               "version": "2.82.0"
             }
           },
-          "AWSStoreDistribution": {
-            "id": "AWSStoreDistribution",
-            "path": "AWSStoreStack/AWSStoreDistribution",
+          "AWSStoreDistro": {
+            "id": "AWSStoreDistro",
+            "path": "AWSStoreStackv3/AWSStoreDistro",
             "children": {
               "Origin1": {
                 "id": "Origin1",
-                "path": "AWSStoreStack/AWSStoreDistribution/Origin1",
+                "path": "AWSStoreStackv3/AWSStoreDistro/Origin1",
                 "constructInfo": {
                   "fqn": "constructs.Construct",
                   "version": "10.2.42"
@@ -175,7 +175,7 @@
               },
               "Resource": {
                 "id": "Resource",
-                "path": "AWSStoreStack/AWSStoreDistribution/Resource",
+                "path": "AWSStoreStackv3/AWSStoreDistro/Resource",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::CloudFront::Distribution",
                   "aws:cdk:cloudformation:props": {
@@ -189,7 +189,7 @@
                               "RegionalDomainName"
                             ]
                           },
-                          "id": "AWSStoreStackAWSStoreDistributionOrigin1CE247B03",
+                          "id": "AWSStoreStackv3AWSStoreDistroOrigin194D1C2DE",
                           "s3OriginConfig": {
                             "originAccessIdentity": {
                               "Fn::Join": [
@@ -207,7 +207,7 @@
                       ],
                       "defaultCacheBehavior": {
                         "pathPattern": "*",
-                        "targetOriginId": "AWSStoreStackAWSStoreDistributionOrigin1CE247B03",
+                        "targetOriginId": "AWSStoreStackv3AWSStoreDistroOrigin194D1C2DE",
                         "cachePolicyId": "658327ea-f89d-4fab-a63d-7e88639e58f6",
                         "compress": true,
                         "viewerProtocolPolicy": "redirect-to-https"
@@ -238,19 +238,19 @@
           },
           "AWSStoreDeployment": {
             "id": "AWSStoreDeployment",
-            "path": "AWSStoreStack/AWSStoreDeployment",
+            "path": "AWSStoreStackv3/AWSStoreDeployment",
             "children": {
               "AwsCliLayer": {
                 "id": "AwsCliLayer",
-                "path": "AWSStoreStack/AWSStoreDeployment/AwsCliLayer",
+                "path": "AWSStoreStackv3/AWSStoreDeployment/AwsCliLayer",
                 "children": {
                   "Code": {
                     "id": "Code",
-                    "path": "AWSStoreStack/AWSStoreDeployment/AwsCliLayer/Code",
+                    "path": "AWSStoreStackv3/AWSStoreDeployment/AwsCliLayer/Code",
                     "children": {
                       "Stage": {
                         "id": "Stage",
-                        "path": "AWSStoreStack/AWSStoreDeployment/AwsCliLayer/Code/Stage",
+                        "path": "AWSStoreStackv3/AWSStoreDeployment/AwsCliLayer/Code/Stage",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.AssetStaging",
                           "version": "2.82.0"
@@ -258,7 +258,7 @@
                       },
                       "AssetBucket": {
                         "id": "AssetBucket",
-                        "path": "AWSStoreStack/AWSStoreDeployment/AwsCliLayer/Code/AssetBucket",
+                        "path": "AWSStoreStackv3/AWSStoreDeployment/AwsCliLayer/Code/AssetBucket",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_s3.BucketBase",
                           "version": "2.82.0"
@@ -272,12 +272,14 @@
                   },
                   "Resource": {
                     "id": "Resource",
-                    "path": "AWSStoreStack/AWSStoreDeployment/AwsCliLayer/Resource",
+                    "path": "AWSStoreStackv3/AWSStoreDeployment/AwsCliLayer/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::Lambda::LayerVersion",
                       "aws:cdk:cloudformation:props": {
                         "content": {
-                          "s3Bucket": "awscdrsschoolautomated",
+                          "s3Bucket": {
+                            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-eu-central-1"
+                          },
                           "s3Key": "0e38c73676c042efb04d698981ab7a9706991a146e59250a537916db0e9bde39.zip"
                         },
                         "description": "/opt/awscli/aws"
@@ -296,7 +298,7 @@
               },
               "CustomResourceHandler": {
                 "id": "CustomResourceHandler",
-                "path": "AWSStoreStack/AWSStoreDeployment/CustomResourceHandler",
+                "path": "AWSStoreStackv3/AWSStoreDeployment/CustomResourceHandler",
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.aws_lambda.SingletonFunction",
                   "version": "2.82.0"
@@ -304,11 +306,11 @@
               },
               "Asset1": {
                 "id": "Asset1",
-                "path": "AWSStoreStack/AWSStoreDeployment/Asset1",
+                "path": "AWSStoreStackv3/AWSStoreDeployment/Asset1",
                 "children": {
                   "Stage": {
                     "id": "Stage",
-                    "path": "AWSStoreStack/AWSStoreDeployment/Asset1/Stage",
+                    "path": "AWSStoreStackv3/AWSStoreDeployment/Asset1/Stage",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.AssetStaging",
                       "version": "2.82.0"
@@ -316,7 +318,7 @@
                   },
                   "AssetBucket": {
                     "id": "AssetBucket",
-                    "path": "AWSStoreStack/AWSStoreDeployment/Asset1/AssetBucket",
+                    "path": "AWSStoreStackv3/AWSStoreDeployment/Asset1/AssetBucket",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_s3.BucketBase",
                       "version": "2.82.0"
@@ -330,11 +332,11 @@
               },
               "CustomResource": {
                 "id": "CustomResource",
-                "path": "AWSStoreStack/AWSStoreDeployment/CustomResource",
+                "path": "AWSStoreStackv3/AWSStoreDeployment/CustomResource",
                 "children": {
                   "Default": {
                     "id": "Default",
-                    "path": "AWSStoreStack/AWSStoreDeployment/CustomResource/Default",
+                    "path": "AWSStoreStackv3/AWSStoreDeployment/CustomResource/Default",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.CfnResource",
                       "version": "2.82.0"
@@ -354,15 +356,15 @@
           },
           "Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C": {
             "id": "Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C",
-            "path": "AWSStoreStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C",
+            "path": "AWSStoreStackv3/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C",
             "children": {
               "ServiceRole": {
                 "id": "ServiceRole",
-                "path": "AWSStoreStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole",
+                "path": "AWSStoreStackv3/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole",
                 "children": {
                   "ImportServiceRole": {
                     "id": "ImportServiceRole",
-                    "path": "AWSStoreStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/ImportServiceRole",
+                    "path": "AWSStoreStackv3/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/ImportServiceRole",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.Resource",
                       "version": "2.82.0"
@@ -370,7 +372,7 @@
                   },
                   "Resource": {
                     "id": "Resource",
-                    "path": "AWSStoreStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/Resource",
+                    "path": "AWSStoreStackv3/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::IAM::Role",
                       "aws:cdk:cloudformation:props": {
@@ -409,11 +411,11 @@
                   },
                   "DefaultPolicy": {
                     "id": "DefaultPolicy",
-                    "path": "AWSStoreStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/DefaultPolicy",
+                    "path": "AWSStoreStackv3/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/DefaultPolicy",
                     "children": {
                       "Resource": {
                         "id": "Resource",
-                        "path": "AWSStoreStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/DefaultPolicy/Resource",
+                        "path": "AWSStoreStackv3/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/DefaultPolicy/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
                           "aws:cdk:cloudformation:props": {
@@ -427,8 +429,29 @@
                                   ],
                                   "Effect": "Allow",
                                   "Resource": [
-                                    "arn:aws:s3:::awscdrsschoolautomated",
-                                    "arn:aws:s3:::awscdrsschoolautomated/*"
+                                    {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          "arn:aws:s3:::",
+                                          {
+                                            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-eu-central-1"
+                                          },
+                                          "/*"
+                                        ]
+                                      ]
+                                    },
+                                    {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          "arn:aws:s3:::",
+                                          {
+                                            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-eu-central-1"
+                                          }
+                                        ]
+                                      ]
+                                    }
                                   ]
                                 },
                                 {
@@ -506,11 +529,11 @@
               },
               "Code": {
                 "id": "Code",
-                "path": "AWSStoreStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Code",
+                "path": "AWSStoreStackv3/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Code",
                 "children": {
                   "Stage": {
                     "id": "Stage",
-                    "path": "AWSStoreStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Code/Stage",
+                    "path": "AWSStoreStackv3/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Code/Stage",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.AssetStaging",
                       "version": "2.82.0"
@@ -518,7 +541,7 @@
                   },
                   "AssetBucket": {
                     "id": "AssetBucket",
-                    "path": "AWSStoreStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Code/AssetBucket",
+                    "path": "AWSStoreStackv3/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Code/AssetBucket",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_s3.BucketBase",
                       "version": "2.82.0"
@@ -532,12 +555,14 @@
               },
               "Resource": {
                 "id": "Resource",
-                "path": "AWSStoreStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Resource",
+                "path": "AWSStoreStackv3/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Resource",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
                   "aws:cdk:cloudformation:props": {
                     "code": {
-                      "s3Bucket": "awscdrsschoolautomated",
+                      "s3Bucket": {
+                        "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-eu-central-1"
+                      },
                       "s3Key": "9eb41a5505d37607ac419321497a4f8c21cf0ee1f9b4a6b29aa04301aea5c7fd.zip"
                     },
                     "role": {
@@ -574,7 +599,7 @@
           },
           "Domain URL": {
             "id": "Domain URL",
-            "path": "AWSStoreStack/Domain URL",
+            "path": "AWSStoreStackv3/Domain URL",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnOutput",
               "version": "2.82.0"
@@ -582,11 +607,11 @@
           },
           "CDKMetadata": {
             "id": "CDKMetadata",
-            "path": "AWSStoreStack/CDKMetadata",
+            "path": "AWSStoreStackv3/CDKMetadata",
             "children": {
               "Default": {
                 "id": "Default",
-                "path": "AWSStoreStack/CDKMetadata/Default",
+                "path": "AWSStoreStackv3/CDKMetadata/Default",
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.CfnResource",
                   "version": "2.82.0"
@@ -600,7 +625,7 @@
           },
           "BootstrapVersion": {
             "id": "BootstrapVersion",
-            "path": "AWSStoreStack/BootstrapVersion",
+            "path": "AWSStoreStackv3/BootstrapVersion",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnParameter",
               "version": "2.82.0"
@@ -608,7 +633,7 @@
           },
           "CheckBootstrapVersion": {
             "id": "CheckBootstrapVersion",
-            "path": "AWSStoreStack/CheckBootstrapVersion",
+            "path": "AWSStoreStackv3/CheckBootstrapVersion",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnRule",
               "version": "2.82.0"

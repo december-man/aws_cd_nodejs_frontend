@@ -1,27 +1,27 @@
 {
   "version": "32.0.0",
   "artifacts": {
-    "AWSStoreStack.assets": {
+    "AWSStoreStackv3.assets": {
       "type": "cdk:asset-manifest",
       "properties": {
-        "file": "AWSStoreStack.assets.json",
+        "file": "AWSStoreStackv3.assets.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
       }
     },
-    "AWSStoreStack": {
+    "AWSStoreStackv3": {
       "type": "aws:cloudformation:stack",
       "environment": "aws://unknown-account/eu-central-1",
       "properties": {
-        "templateFile": "AWSStoreStack.template.json",
+        "templateFile": "AWSStoreStackv3.template.json",
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-eu-central-1",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-eu-central-1",
-        "stackTemplateAssetObjectUrl": "s3://awscdrsschoolautomated/13d8a9f19f7dc029d3393423607fd5317669e1c4731a45196a2af21998aca880.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-eu-central-1/4c24765f86b51d24324bea286fc664e7c23cdf894a5259bb00323b02d6b40fcb.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
-          "AWSStoreStack.assets"
+          "AWSStoreStackv3.assets"
         ],
         "lookupRole": {
           "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-eu-central-1",
@@ -30,89 +30,89 @@
         }
       },
       "dependencies": [
-        "AWSStoreStack.assets"
+        "AWSStoreStackv3.assets"
       ],
       "metadata": {
-        "/AWSStoreStack/AWSStoreBucket/Resource": [
+        "/AWSStoreStackv3/AWSStoreBucket/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "AWSStoreBucket17D0FA51"
           }
         ],
-        "/AWSStoreStack/AWSStoreBucket/Policy/Resource": [
+        "/AWSStoreStackv3/AWSStoreBucket/Policy/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "AWSStoreBucketPolicy5CCB1D6B"
           }
         ],
-        "/AWSStoreStack/AWSStoreOAI/Resource": [
+        "/AWSStoreStackv3/AWSStoreOAI/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "AWSStoreOAI7139C17E"
           }
         ],
-        "/AWSStoreStack/AWSStoreDistribution/Resource": [
+        "/AWSStoreStackv3/AWSStoreDistro/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "AWSStoreDistributionD25397BB"
+            "data": "AWSStoreDistro81E52037"
           }
         ],
-        "/AWSStoreStack/AWSStoreDeployment/AwsCliLayer/Resource": [
+        "/AWSStoreStackv3/AWSStoreDeployment/AwsCliLayer/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "AWSStoreDeploymentAwsCliLayerAA0E6CB1"
           }
         ],
-        "/AWSStoreStack/AWSStoreDeployment/CustomResource/Default": [
+        "/AWSStoreStackv3/AWSStoreDeployment/CustomResource/Default": [
           {
             "type": "aws:cdk:logicalId",
             "data": "AWSStoreDeploymentCustomResource43E84B0B"
           }
         ],
-        "/AWSStoreStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/Resource": [
+        "/AWSStoreStackv3/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265"
           }
         ],
-        "/AWSStoreStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/DefaultPolicy/Resource": [
+        "/AWSStoreStackv3/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/DefaultPolicy/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRoleDefaultPolicy88902FDF"
           }
         ],
-        "/AWSStoreStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Resource": [
+        "/AWSStoreStackv3/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C81C01536"
           }
         ],
-        "/AWSStoreStack/Domain URL": [
+        "/AWSStoreStackv3/Domain URL": [
           {
             "type": "aws:cdk:logicalId",
             "data": "DomainURL"
           }
         ],
-        "/AWSStoreStack/CDKMetadata/Default": [
+        "/AWSStoreStackv3/CDKMetadata/Default": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CDKMetadata"
           }
         ],
-        "/AWSStoreStack/BootstrapVersion": [
+        "/AWSStoreStackv3/BootstrapVersion": [
           {
             "type": "aws:cdk:logicalId",
             "data": "BootstrapVersion"
           }
         ],
-        "/AWSStoreStack/CheckBootstrapVersion": [
+        "/AWSStoreStackv3/CheckBootstrapVersion": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CheckBootstrapVersion"
           }
         ]
       },
-      "displayName": "AWSStoreStack"
+      "displayName": "AWSStoreStackv3"
     },
     "Tree": {
       "type": "cdk:tree",

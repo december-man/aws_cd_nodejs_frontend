@@ -3,10 +3,10 @@
   "AWSStoreBucket17D0FA51": {
    "Type": "AWS::S3::Bucket",
    "Properties": {
-    "BucketName": "awscdrsschool2",
+    "BucketName": "awscdrsschoolt2v3",
     "Tags": [
      {
-      "Key": "aws-cdk:cr-owned:42d319b3",
+      "Key": "aws-cdk:cr-owned:f3543bf8",
       "Value": "true"
      }
     ]
@@ -14,7 +14,7 @@
    "UpdateReplacePolicy": "Retain",
    "DeletionPolicy": "Retain",
    "Metadata": {
-    "aws:cdk:path": "AWSStoreStack/AWSStoreBucket/Resource"
+    "aws:cdk:path": "AWSStoreStackv3/AWSStoreBucket/Resource"
    }
   },
   "AWSStoreBucketPolicy5CCB1D6B": {
@@ -94,7 +94,7 @@
     }
    },
    "Metadata": {
-    "aws:cdk:path": "AWSStoreStack/AWSStoreBucket/Policy/Resource"
+    "aws:cdk:path": "AWSStoreStackv3/AWSStoreBucket/Policy/Resource"
    }
   },
   "AWSStoreOAI7139C17E": {
@@ -107,10 +107,10 @@
     }
    },
    "Metadata": {
-    "aws:cdk:path": "AWSStoreStack/AWSStoreOAI/Resource"
+    "aws:cdk:path": "AWSStoreStackv3/AWSStoreOAI/Resource"
    }
   },
-  "AWSStoreDistributionD25397BB": {
+  "AWSStoreDistro81E52037": {
    "Type": "AWS::CloudFront::Distribution",
    "Properties": {
     "DistributionConfig": {
@@ -124,7 +124,7 @@
      "DefaultCacheBehavior": {
       "CachePolicyId": "658327ea-f89d-4fab-a63d-7e88639e58f6",
       "Compress": true,
-      "TargetOriginId": "AWSStoreStackAWSStoreDistributionOrigin1CE247B03",
+      "TargetOriginId": "AWSStoreStackv3AWSStoreDistroOrigin194D1C2DE",
       "ViewerProtocolPolicy": "redirect-to-https"
      },
      "DefaultRootObject": "index.html",
@@ -139,7 +139,7 @@
          "RegionalDomainName"
         ]
        },
-       "Id": "AWSStoreStackAWSStoreDistributionOrigin1CE247B03",
+       "Id": "AWSStoreStackv3AWSStoreDistroOrigin194D1C2DE",
        "S3OriginConfig": {
         "OriginAccessIdentity": {
          "Fn::Join": [
@@ -158,20 +158,22 @@
     }
    },
    "Metadata": {
-    "aws:cdk:path": "AWSStoreStack/AWSStoreDistribution/Resource"
+    "aws:cdk:path": "AWSStoreStackv3/AWSStoreDistro/Resource"
    }
   },
   "AWSStoreDeploymentAwsCliLayerAA0E6CB1": {
    "Type": "AWS::Lambda::LayerVersion",
    "Properties": {
     "Content": {
-     "S3Bucket": "awscdrsschooltasktwo",
+     "S3Bucket": {
+      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-eu-central-1"
+     },
      "S3Key": "0e38c73676c042efb04d698981ab7a9706991a146e59250a537916db0e9bde39.zip"
     },
     "Description": "/opt/awscli/aws"
    },
    "Metadata": {
-    "aws:cdk:path": "AWSStoreStack/AWSStoreDeployment/AwsCliLayer/Resource",
+    "aws:cdk:path": "AWSStoreStackv3/AWSStoreDeployment/AwsCliLayer/Resource",
     "aws:asset:path": "asset.0e38c73676c042efb04d698981ab7a9706991a146e59250a537916db0e9bde39.zip",
     "aws:asset:is-bundled": false,
     "aws:asset:property": "Content"
@@ -187,17 +189,19 @@
      ]
     },
     "SourceBucketNames": [
-     "awscdrsschooltasktwo"
+     {
+      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-eu-central-1"
+     }
     ],
     "SourceObjectKeys": [
-     "5c19be8ac7516b3ef0b078e64cb9704b96ea000db048bb6afa395c2e37894ca7.zip"
+     "26ab571bf6aeda9f26dfe28a371d1be728feeb4176e5143b5755130aea635642.zip"
     ],
     "DestinationBucketName": {
      "Ref": "AWSStoreBucket17D0FA51"
     },
     "Prune": true,
     "DistributionId": {
-     "Ref": "AWSStoreDistributionD25397BB"
+     "Ref": "AWSStoreDistro81E52037"
     },
     "DistributionPaths": [
      "/*"
@@ -206,7 +210,7 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "AWSStoreStack/AWSStoreDeployment/CustomResource/Default"
+    "aws:cdk:path": "AWSStoreStackv3/AWSStoreDeployment/CustomResource/Default"
    }
   },
   "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265": {
@@ -240,7 +244,7 @@
     ]
    },
    "Metadata": {
-    "aws:cdk:path": "AWSStoreStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/Resource"
+    "aws:cdk:path": "AWSStoreStackv3/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/Resource"
    }
   },
   "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRoleDefaultPolicy88902FDF": {
@@ -256,8 +260,29 @@
        ],
        "Effect": "Allow",
        "Resource": [
-        "arn:aws:s3:::awscdrsschooltasktwo",
-        "arn:aws:s3:::awscdrsschooltasktwo/*"
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:aws:s3:::",
+           {
+            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-eu-central-1"
+           },
+           "/*"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:aws:s3:::",
+           {
+            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-eu-central-1"
+           }
+          ]
+         ]
+        }
        ]
       },
       {
@@ -316,14 +341,16 @@
     ]
    },
    "Metadata": {
-    "aws:cdk:path": "AWSStoreStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/DefaultPolicy/Resource"
+    "aws:cdk:path": "AWSStoreStackv3/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/DefaultPolicy/Resource"
    }
   },
   "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C81C01536": {
    "Type": "AWS::Lambda::Function",
    "Properties": {
     "Code": {
-     "S3Bucket": "awscdrsschooltasktwo",
+     "S3Bucket": {
+      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-eu-central-1"
+     },
      "S3Key": "9eb41a5505d37607ac419321497a4f8c21cf0ee1f9b4a6b29aa04301aea5c7fd.zip"
     },
     "Role": {
@@ -351,7 +378,7 @@
     "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265"
    ],
    "Metadata": {
-    "aws:cdk:path": "AWSStoreStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Resource",
+    "aws:cdk:path": "AWSStoreStackv3/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Resource",
     "aws:asset:path": "asset.9eb41a5505d37607ac419321497a4f8c21cf0ee1f9b4a6b29aa04301aea5c7fd",
     "aws:asset:is-bundled": false,
     "aws:asset:property": "Code"
@@ -360,10 +387,10 @@
   "CDKMetadata": {
    "Type": "AWS::CDK::Metadata",
    "Properties": {
-    "Analytics": "v2:deflate64:H4sIAAAAAAAA/21Ry2rDMBD8lt7lbXAuvSYOgUIhJYFejSxvzMayFLRSQxD+90p2XoeeZnYY7UijEj5KWLzJCxeq7QtNDcSDl6oXSaojLyGug+rRi+pobmyGb6tJXZ/ybZ6HtWQchdI2tEdnjYe4c9SRWSmFzJ8tGk9+OlxlzzZ7/nVsiL2jJniyJttf51Hwso4tnrW9DskPc/bmIQjJjJ5hlWEUWg5NKyGmNV/yiu4HHee1BzKdRm/NNhg1BT1Ist75KEgOEPdWY5YnfHYws/EeUuscUKcOlSZYXbjSNGWK6S6p4fTUTlSBvR32yDY4Na+981dxF/w5pAcY2yKc+P23XED+tRMTFS6kpgaE/Yx/SF9uINEBAAA="
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/21Ry27CMBD8lt7NtkAPXEMQElIlKpB6jYyzoCWOjbx2UWTl32snvA49zexovGOPZ7CYwcebvPJE1c1E0wHi3kvViCRVkecQl0E16EV5NDc2wrfVpLqnfJvHYSkZe6G0DfXRWeMhbh2dyBRKIfOmRuPJD4fL7Flnz7+OFbF3dAierMn217kXPK9ijRdtuzb5YcxePQQhmdEzFBl6oWV7qCXEtOZLduh+0HFeuydz0uitWQejhqAHSdY77wXJFuLOaszygM8ORtbfQyqdA6rUodIExZVLTUOmGO6SGk5PPYkysLftDtkGp8a1d/4qboO/hPQAY2uEM7//Thcw/UzfdmaiiQupqhZhN+IfEzi4ftIBAAA="
    },
    "Metadata": {
-    "aws:cdk:path": "AWSStoreStack/CDKMetadata/Default"
+    "aws:cdk:path": "AWSStoreStackv3/CDKMetadata/Default"
    }
   }
  },
@@ -371,7 +398,7 @@
   "DomainURL": {
    "Value": {
     "Fn::GetAtt": [
-     "AWSStoreDistributionD25397BB",
+     "AWSStoreDistro81E52037",
      "DomainName"
     ]
    }

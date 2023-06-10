@@ -43,15 +43,15 @@
         }
       }
     },
-    "090086af5769f85c854285804a16c127c97972a4f813a563fb6d93ec6f97659f": {
+    "7afa6e14e5af7a98be04e0111b0cf32df7179d76d9fa1b697e16acf63551a706": {
       "source": {
-        "path": "AWSStoreStack.template.json",
+        "path": "AWSStoreStackv2.template.json",
         "packaging": "file"
       },
       "destinations": {
         "current_account-eu-central-1": {
           "bucketName": "awscdrsschooltasktwo",
-          "objectKey": "090086af5769f85c854285804a16c127c97972a4f813a563fb6d93ec6f97659f.json",
+          "objectKey": "7afa6e14e5af7a98be04e0111b0cf32df7179d76d9fa1b697e16acf63551a706.json",
           "region": "eu-central-1",
           "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-eu-central-1"
         }
