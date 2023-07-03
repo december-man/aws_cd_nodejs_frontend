@@ -4,7 +4,7 @@
 
 Automated Deployment Cloudfront URL:
 
-https://d172ijz47ga3e3.cloudfront.net
+https://d1kybbg0rzdlcc.cloudfront.net
 
 Bucket Website Endpoint (Bucket Hosting):
 
@@ -16,7 +16,15 @@ Successfully integrated with FE app for PLP (Product List Page) representation.
 
   1. Added API Invoke URL to ApiPaths.ts
   2. Modified products.ts to point to /products API endpoint
-    
+
+### This is the FE integration PR from the Task 5
+
+  1. Modified API Invoke URL for /import to ApiPaths.ts
+
+### This is the FE integration PR from the Task 7
+1. Changed CSVFileImport.tsx: added csv file import with authorization
+2. Changed Index.tsx: added alert functionality
+
 #### Link:
 
 https://d172ijz47ga3e3.cloudfront.net

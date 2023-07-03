@@ -16,6 +16,7 @@ dist-ssr
 
 # Editor directories and files
 .cdk.out/*
+.cdk.out
 .vscode/*
 !.vscode/extensions.json
 .idea

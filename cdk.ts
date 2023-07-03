@@ -12,8 +12,8 @@ export class AppStack extends cdk.Stack {
 
     constructor(scope: Construct, id: string, props?: cdk.StackProps) {
         super(scope, id, props);
-        this.bucket = new s3.Bucket(this, 'AWSStoreBucket', {
-            bucketName: 'awscdrsschoolt2v3',
+        this.bucket = new s3.Bucket(this, 'AWSStoreFEBucket', {
+            bucketName: 'awscdrsschoolfe',
         });
         this.originAccessIdentity = new cloudfront.OriginAccessIdentity(
             this,
@@ -49,25 +49,15 @@ export class AppStack extends cdk.Stack {
 }
 
 const app = new cdk.App();
-const stack = new AppStack(app, 'AWSStoreStackv3', {
+const stack = new AppStack(app, 'AWSStoreStackFE', {
     env: { region: 'eu-central-1' },
-//    synthesizer: new cdk.DefaultStackSynthesizer({
-//        fileAssetsBucketName: 'awscdrsschoolt2v2',
-//        bucketPrefix: '',
-//    })
 });
 
-
-
-new deployment.BucketDeployment(stack, 'AWSStoreDeployment', {
+new deployment.BucketDeployment(stack, 'AWSStoreBucketDeployment', {
     destinationBucket: stack.bucket,
     sources: [deployment.Source.asset('./dist')],
     distribution: stack.distribution,
     distributionPaths: ['/*'],
-});
-
-new cdk.CfnOutput(stack, 'Domain URL', {
-    value: stack.distribution.distributionDomainName,
 });
 
 

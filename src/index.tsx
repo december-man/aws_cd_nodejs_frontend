@@ -7,6 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { theme } from "~/theme";
+import axios from "axios";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -35,3 +36,16 @@ root.render(
     </BrowserRouter>
   </React.StrictMode>
 );
+
+
+axios.interceptors.response.use(response => {
+  return response;
+}, error => {
+ if (error.response.status === 401) {
+  alert('401: Unauthorized');
+ };
+ if (error.response.status === 403) {
+  alert('403: Forbidden');
+ };
+ return Promise.reject(error);
+});
